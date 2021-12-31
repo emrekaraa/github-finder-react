@@ -10,7 +10,6 @@ import ThemeContext from "../Context/ThemeContext";
 const Header = () => {
   const { users } = useContext(GithubContext);
   const { theme, setTheme } = useContext(ThemeContext);
-  console.log(theme);
   return (
     <header
       className={`flex justify-between ${

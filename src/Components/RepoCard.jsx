@@ -1,0 +1,49 @@
+import React from "react";
+
+const RepoCard = ({ color, liveDemo, name, description, topics, htmlUrl }) => {
+  return (
+    <>
+      {/* <!-- Card 1 --> */}
+      <div
+        className={`transform transition cursor-pointer hover:-translate-y-2 ml-10 relative flex items-center px-6 py-4 bg-${color}-600 text-white rounded mb-10 flex-col md:flex-row space-y-4 md:space-y-0`}
+      >
+        {/* <!-- Dot Follwing the Left Vertical Line --> */}
+        <div
+          className={`w-5 h-5 bg-${color}-600 absolute -left-10 transform -translate-x-2/4 rounded-full z-10 mt-2 md:mt-0`}
+        ></div>
+        {/* <!-- Line that connecting the box with the vertical line --> */}
+        <div
+          className={`w-10 h-1 bg-${color}-300  absolute -left-10 z-0`}
+        ></div>
+        {/* <!-- Content that showing in the box --> */}
+        <div className="flex-auto">
+          <h1 className="text-xl font-bold">{name}</h1>
+          <h3 className="my-2">{description}</h3>
+
+          <h4>
+            {topics.map((topic) => (
+              <span key={topic} className="mr-2 badge-xs badge p-2">
+                {topic}
+              </span>
+            ))}
+          </h4>
+        </div>
+
+        <a
+          href={`${htmlUrl}`}
+          className="text-center text-black border-2 border-black  capitalize hover:text-white btn-md btn-ghost btn"
+        >
+          View Repo
+        </a>
+        <a
+          href={`${liveDemo}`}
+          className="text-center text-black border-2 border-black capitalize hover:text-white btn-md btn-ghost btn md:ml-3 "
+        >
+          Live Demo
+        </a>
+      </div>
+    </>
+  );
+};
+
+export default RepoCard;
