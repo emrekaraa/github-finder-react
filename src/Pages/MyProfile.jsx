@@ -13,38 +13,6 @@ const MyProfile = () => {
   //STATES
   const [data, setData] = useState([]);
   const [repos, setRepos] = useState([]);
-  const [bgColors] = useState([
-    "blue",
-    "green",
-    "pink",
-    "yellow",
-    "purple",
-    "blue",
-    "green",
-    "pink",
-    "yellow",
-    "purple",
-    "blue",
-    "green",
-    "pink",
-    "yellow",
-    "purple",
-    "blue",
-    "green",
-    "pink",
-    "yellow",
-    "purple",
-    "blue",
-    "green",
-    "pink",
-    "yellow",
-    "purple",
-    "blue",
-    "green",
-    "pink",
-    "yellow",
-    "purple",
-  ]);
 
   //EFFECTS
   useEffect(() => {
@@ -60,6 +28,8 @@ const MyProfile = () => {
     return () => clearTimeout(apiCall);
   }, []);
 
+  console.log(repos);
+
   return (
     <>
       {/* CONTAINER */}
@@ -69,14 +39,14 @@ const MyProfile = () => {
           My GitHub Profile
         </h1>
         {/* LOADER ANIMATION DATA CONTROL  */}
-        {data.length != 0 ? (
+        {data.length !== 0 ? (
           <>
             {/* PROFILE CARD */}
             <div className="card lg:card-side card-bordered border-white flex md:px-5 py-5 w-full md:w-5/12">
               {/* PROFILE AVATAR */}
               <div className="avatar flex items-center justify-center">
                 <div className="mb-8 rounded-full w-40 h-40 ">
-                  <img src={data.avatar_url} />
+                  <img alt="avatar" src={data.avatar_url} />
                 </div>
               </div>
 
@@ -120,26 +90,21 @@ const MyProfile = () => {
             </div>
 
             {/* REPOSITORIES  */}
-            <div className="w-12/12 h-2/5 mt-10  ">
+            <div className="w-12/12 h-2/5 mt-10">
               <h1 className="text-3xl text-center font-bold ">Repositories</h1>
               <p className="text-center font-bold text-2xl">({repos.length})</p>
               <div className="border-l-2 mt-10">
                 {repos.map((repo, i) => (
                   <RepoCard
                     key={repo.id}
-                    color={bgColors[i]}
                     liveDemo={repo.homepage}
                     name={repo.name}
                     description={repo.description}
                     topics={repo.topics}
                     htmlUrl={repo.html_url}
+                    language={repo.language}
                   />
                 ))}
-                {/* <RepoCard bgColor={"bg-blue"} />
-                <RepoCard bgColor={"bg-green"} />
-                <RepoCard bgColor={"bg-yellow"} />
-                <RepoCard bgColor={"bg-purple"} />
-                <RepoCard bgColor={"bg-pink"} /> */}
               </div>
             </div>
           </>

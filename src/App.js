@@ -1,13 +1,6 @@
 import "./App.css";
-import { useContext } from "react";
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Link,
-  NavLink,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // COMPONENTS
 import Header from "./Components/Header";
