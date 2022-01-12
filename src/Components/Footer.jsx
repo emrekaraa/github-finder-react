@@ -7,9 +7,8 @@ const Footer = () => {
 
   return (
     <footer
-      className={`${
-        theme === "dark" ? "bg-slate-800" : "bg-black"
-      } p-2.5 flex justify-center items-center`}
+      className={`${theme === "dark" ? "bg-slate-800" : "bg-black"
+        } p-2.5 flex justify-center items-center`}
     >
       <BsGithub className="mx-2" />
       <p>GitHub Finder | © 2021 Emre Kara</p>

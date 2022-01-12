@@ -12,9 +12,8 @@ const Header = () => {
   const { theme, setTheme } = useContext(ThemeContext);
   return (
     <header
-      className={`flex justify-between ${
-        theme === "dark" ? "bg-slate-800" : "bg-black"
-      } items-center p-5 px-4 md:px-40 `}
+      className={`flex justify-between ${theme === "dark" ? "bg-slate-800" : "bg-black"
+        } items-center p-5 px-4 md:px-40 `}
     >
       <div className="logo text-2xl flex items-center">
         <Link to={"/"}>
@@ -36,7 +35,7 @@ const Header = () => {
               Home
             </NavLink>
           </li>
-          <li className="mx-3 border-b-2 border-white/[0] hover:border-white/[100] ">
+          {/* <li className="mx-3 border-b-2 border-white/[0] hover:border-white/[100] ">
             <NavLink
               to="/about"
               className={(navData) =>
@@ -45,7 +44,7 @@ const Header = () => {
             >
               About
             </NavLink>
-          </li>
+          </li> */}
           <li className="mx-3 border-b-2 border-white/[0] hover:border-white/[100] ">
             <NavLink
               to="/myprofile"
