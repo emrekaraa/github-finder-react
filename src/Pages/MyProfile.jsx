@@ -23,12 +23,11 @@ const MyProfile = () => {
       axios
         .get("https://api.github.com/users/emrekaraa/repos")
         .then((res) => setRepos(res.data));
-    }, 2000);
+    }, 1500);
 
     return () => clearTimeout(apiCall);
   }, []);
 
-  console.log(repos);
 
   return (
     <>

@@ -8,21 +8,36 @@ const RepoCard = ({
   htmlUrl,
   language,
 }) => {
+
   return (
     <>
       {/* <!-- Card 1 --> */}
       <div
-        className={`transform transition cursor-pointer hover:-translate-y-2 ml-10 relative flex items-center px-6 py-4 ${
-          language === "JavaScript"
-            ? "bg-yellow-600"
-            : language === "SCSS"
+        className={`transform transition cursor-pointer hover:-translate-y-2 ml-10 relative flex items-center px-6 py-4 ${language === "JavaScript"
+          ? "bg-yellow-500"
+          : language === "SCSS"
             ? "bg-purple-600"
             : language === "HTML"
-            ? "bg-red-600"
-            : language === "CSS"
-            ? "bg-pink-500"
-            : "bg-blue-500"
-        } text-white rounded mb-10 flex-col md:flex-row space-y-4 md:space-y-0`}
+              ? "bg-red-600"
+              : language === "CSS"
+                ? "bg-pink-500"
+                : language === "Vue"
+                  ? "bg-green-500"
+                  : language === "Ruby"
+                    ? "bg-red-900"
+                    : language === "Python"
+                      ? "bg-yellow-400" :
+                      language === "Java"
+                        ? "bg-orange-900" :
+                        language === "Shell"
+                          ? "bg-green-500" :
+                          "bg-blue-500"
+
+
+
+
+
+          } text-white rounded mb-10 flex-col md:flex-row space-y-4 md:space-y-0`}
       >
         {/* <!-- Dot Follwing the Left Vertical Line --> */}
         <div
@@ -56,12 +71,13 @@ const RepoCard = ({
         >
           View Repo
         </a>
-        <a
-          href={`${liveDemo}`}
+        {liveDemo && <a
+          href={`${liveDemo}  `}
           className="text-center text-black border-2 border-black capitalize hover:text-white btn-md btn-ghost btn md:ml-3 "
         >
           Live Demo
-        </a>
+        </a>}
+
       </div>
     </>
   );

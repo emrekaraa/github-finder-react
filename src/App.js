@@ -9,6 +9,7 @@ import Footer from "./Components/Footer";
 // PAGES
 import HomeScreen from "./Pages/HomeScreen";
 import AboutPage from "./Pages/AboutPage";
+import Profile from "./Pages/Profile";
 
 // CONTEXT
 import { GithubProvider } from "./Context/GithubContext";
@@ -29,7 +30,10 @@ function App() {
               <Route path="/" element={<HomeScreen />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/myprofile" element={<MyProfile />} />
+              <Route path="/:username" element={<Profile />} />
               <Route path="/*" element={<NotFound />} />
+
+
             </Routes>
             <Footer />
           </Router>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 // ICONS
 import { BsGithub } from "react-icons/bs";
@@ -70,10 +71,10 @@ const HomeScreen = () => {
                 </div>
 
                 <div>
-                  <a href={`${user.html_url}`} className="btn btn-outline">
+                  <Link to={`/${user.login}`} className="btn btn-outline">
                     <BsGithub className="mr-2 text-lg" />
                     View Profile
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
