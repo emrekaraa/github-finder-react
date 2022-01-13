@@ -92,9 +92,9 @@ const Profile = () => {
                         </div>
 
                         {/* REPOSITORIES  */}
-                        <div className="w-12/12 h-2/5 mt-10">
+                        <div className="w-12/12 h-2/5 mt-10 ">
                             <h1 className="text-3xl text-center font-bold ">Repositories</h1>
-                            <p className="text-center font-bold text-2xl">({repos.length})</p>
+                            <p className="text-center font-bold text-2xl">({data.public_repos})</p>
                             <div className="border-l-2 mt-10">
                                 {repos.map((repo, i) => (
                                     <RepoCard
@@ -108,7 +108,11 @@ const Profile = () => {
                                     />
                                 ))}
                             </div>
+                            {data.public_repos > 30 && <a href={`${data.html_url}`} className="btn btn-outline w-full">View all repos</a>}
+
                         </div>
+
+
                     </>
                 ) : (
                     <Loader />

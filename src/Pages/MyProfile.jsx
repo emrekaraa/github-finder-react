@@ -104,7 +104,10 @@ const MyProfile = () => {
                     language={repo.language}
                   />
                 ))}
+
+
               </div>
+              {data.public_repos > 30 && <a href={`${data.html_url}`} className="btn btn-outline w-full">View all repos</a>}
             </div>
           </>
         ) : (
