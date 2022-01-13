@@ -43,10 +43,10 @@ const HomeScreen = () => {
       <div className="flex w-5/6 flex-wrap mx-auto">
 
         {loading ? <Loader /> : userSearch.map(user => {
-          return <div key={user.id} className="mx-auto p-3">
+          return <div key={user.id} className="mx-auto mb-5">
 
             {/* PROFILE CARD */}
-            <div className="card card-bordered border-white flex p-5 bg-slate-800">
+            <div className="card card-bordered border-white flex pt-5 bg-slate-800 w-72 ">
               {/* PROFILE AVATAR */}
               <div className="avatar flex items-center justify-center">
                 <div className="rounded-full w-28 h-28 ">
@@ -55,21 +55,22 @@ const HomeScreen = () => {
               </div>
 
               {/* CARD BODY */}
-              <div className="card-body flex items-center p-0 sm:p-5">
+              <div className="card-body flex items-center">
                 <h1 className="card-title text-2xl">{user.login}</h1>
 
-                <div className="location flex items-center">
+                <div className="flex items-center">
 
                   <p className="text-xl">{user.location}</p>
                 </div>
-                <div className="blog flex items-center ">
+                <div className="flex items-center ">
 
                   <a href={`${user.blog}`}>
                     {user.blog}
                   </a>
                 </div>
-                <div className="card-actions">
-                  <a href={`${user.html_url}`} className="btn btn-outline ">
+
+                <div>
+                  <a href={`${user.html_url}`} className="btn btn-outline">
                     <BsGithub className="mr-2 text-lg" />
                     View Profile
                   </a>
