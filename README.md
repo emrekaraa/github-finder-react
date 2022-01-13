@@ -1,16 +1,12 @@
-# GitHub Profile Finder React App
+# GitHub Profile Finder 
 
-## GitHub Api Source Link:
+   - My personel react.js project
 
-(https://api.github.com)
-
-## Click to view live demo
-
+   * Click to view live demo 
 (https://git-hub-finder-react.netlify.app)
-
 ## State Management Tool
 
-Context Api
+    - Context api
 
 ## Dependencies
 
@@ -24,3 +20,7 @@ Context Api
     - react-icons
     - mobile hamburger menu
     - responsive design
+    
+## GitHub Api Source Link:
+
+(https://api.github.com)
