@@ -1,20 +1,23 @@
 # Github Profile Finder React App
-GitHub Api Source Link: (https://api.github.com)
+
+## GitHub Api Source Link:
+(https://api.github.com)
+
+## Click to view live demo 
+(https://git-hub-finder-react.netlify.app)
 
 ## State Management Tool
 Context Api
 
 ## Dependencies
     - axios
+    - react-router-dom v6
+## Desing
     - tailwind.css
     - daisyui
     - react-icons
-    - react-router-dom v6
+    - mobile menu
+    - responsive design
 
-
-
-Continues to be developed ...
-
-Click to view live demo (https://git-hub-finder-react.netlify.app)
 
 
