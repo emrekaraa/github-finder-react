@@ -1,4 +1,4 @@
-# Github Profile Finder React App
+# GitHub Profile Finder React App
 
 ## GitHub Api Source Link:
 
