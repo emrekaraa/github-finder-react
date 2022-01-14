@@ -30,8 +30,8 @@ function App() {
               <Route path="/" element={<HomeScreen />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/myprofile" element={<MyProfile />} />
-              <Route path="/:username" element={<Profile />} />
               <Route path="/404" element={<NotFound />} />
+              <Route path="/:username" element={<Profile />} />
               <Route path="/*" element={<NotFound />} />
             </Routes>
             <Footer />

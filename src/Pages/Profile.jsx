@@ -54,7 +54,7 @@ const Profile = () => {
 
                             {/* CARD BODY */}
                             <div className="card-body flex items-center p-0 sm:p-5">
-                                <h1 className="card-title text-3xl">{data.name}</h1>
+                                <h1 className="card-title text-3xl">{data.name ? data.name : username}</h1>
                                 <div className="badges my-1 flex w-full justify-evenly flex-wrap">
                                     <div className="badge badge-primary cursor-pointer ">
                                         <a href={`https://github.com/${username}?tab=repositories`}>
@@ -73,11 +73,12 @@ const Profile = () => {
                                     </div>
                                 </div>
                                 <div className="location mt-3 flex items-center">
-                                    <GoLocation />
+                                    {data.location && <GoLocation />}
+
                                     <p className="ml-2 text-xl">{data.location}</p>
                                 </div>
                                 <div className="blog flex items-center ">
-                                    <BsLinkedin />
+                                    {data.blog && <BsLinkedin />}
                                     <a className="ml-2" href={`${data.blog}`}>
                                         {data.blog}
                                     </a>
