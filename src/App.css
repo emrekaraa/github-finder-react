@@ -34,3 +34,13 @@
 .chkbx :checked ~ .x {
   border-color: #fe7f2d;
 }
+
+.pagination .btn {
+  padding: 0px;
+  margin: 5px 5px;
+}
+
+.page-link {
+  padding: 16px 22px;
+  border-radius: 8px;
+}
