@@ -1,3 +1,4 @@
+/* Theme Button Css Start */
 .chkbx input[type="checkbox"] {
   display: none;
 }
@@ -34,13 +35,16 @@
 .chkbx :checked ~ .x {
   border-color: #fe7f2d;
 }
+/* Theme Button Css End */
 
+/* Pagination Css Start */
 .pagination .btn {
   padding: 0px;
   margin: 5px 5px;
 }
-
 .page-link {
   padding: 16px 22px;
   border-radius: 8px;
 }
+
+/* Pagination Css End */

@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import ReactPaginate from "react-paginate";
-
-//! REACT ICONS
 import { BsGithub } from "react-icons/bs";
+import axios from "axios";
+import ReactPaginate from "react-paginate";
 import Loader from "../Components/Loader";
 
 
-const HomeScreen = () => {
+const HomePage = () => {
 
   //! USE STATES
   const [input, setInput] = useState("");
@@ -48,7 +46,7 @@ const HomeScreen = () => {
       </form >
 
       {/* Pagination Bar */}
-      <div div className="pagination text-center" >
+      <div className="pagination text-center" >
         {userSearch.length ?
           <ReactPaginate
             className={'p-5'}
@@ -105,9 +103,10 @@ const HomeScreen = () => {
               </div>
             </div>
           </div>
-        })}</div>
+        })}
+      </div>
     </>
   );
 };
 
-export default HomeScreen;
+export default HomePage;

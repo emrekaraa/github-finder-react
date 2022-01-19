@@ -1,58 +1,46 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { useParams } from "react-router-dom";
-
-// ICONS
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
-
-//COMPONENTS
+import axios from "axios";
 import Loader from "../Components/Loader";
 import RepoCard from "../Components/RepoCard";
 
 const Profile = () => {
     let { username } = useParams();
 
-    //STATES
     const [data, setData] = useState([]);
     const [repos, setRepos] = useState([]);
 
-    //EFFECTS
     useEffect(() => {
         const apiCall = setTimeout(() => {
-            axios
-                .get(`https://api.github.com/users/${username}`)
-                .then((res) => setData(res.data));
-            axios
-                .get(`https://api.github.com/users/${username}/repos`)
-                .then((res) => setRepos(res.data));
+            axios.get(`https://api.github.com/users/${username}`).then((res) => setData(res.data));
+            axios.get(`https://api.github.com/users/${username}/repos`).then((res) => setRepos(res.data));
         }, 1500);
-
         return () => clearTimeout(apiCall);
     }, []);
 
-
     return (
         <>
-            {/* CONTAINER */}
+            {/* Container */}
             <div className="items-center flex flex-col mb-5 px-5 h-auto">
-                {/* PAGE TITLE */}
+                {/* Page title */}
                 <h1 className="text-4xl font-bold my-5 text-center">
                     {username} GitHub Profile
                 </h1>
-                {/* LOADER ANIMATION DATA CONTROL  */}
+                {/* Loader animation data control  */}
                 {data.length !== 0 ? (
                     <>
-                        {/* PROFILE CARD */}
+                        {/* Profile Card */}
                         <div className="card lg:card-side card-bordered border-white flex md:px-5 py-5 w-full md:w-5/12">
-                            {/* PROFILE AVATAR */}
+                            {/* Card Avatar */}
                             <div className="avatar flex items-center justify-center">
                                 <div className="mb-8 rounded-full w-40 h-40 ">
                                     <img alt="avatar" src={data.avatar_url} />
                                 </div>
                             </div>
 
-                            {/* CARD BODY */}
+                            {/* Card Body */}
                             <div className="card-body flex items-center p-0 sm:p-5">
                                 <h1 className="card-title text-3xl">{data.name ? data.name : username}</h1>
                                 <div className="badges my-1 flex w-full justify-evenly flex-wrap">
@@ -92,7 +80,7 @@ const Profile = () => {
                             </div>
                         </div>
 
-                        {/* REPOSITORIES  */}
+                        {/* Repositories  */}
                         <div className="w-12/12 h-2/5 mt-10 ">
                             <h1 className="text-3xl text-center font-bold ">Repositories</h1>
                             <p className="text-center font-bold text-2xl">({data.public_repos})</p>
@@ -110,14 +98,9 @@ const Profile = () => {
                                 ))}
                             </div>
                             {data.public_repos > 30 && <a href={`${data.html_url}`} className="btn btn-outline w-full">View all repos</a>}
-
                         </div>
-
-
                     </>
-                ) : (
-                    <Loader />
-                )}
+                ) : (<Loader />)}
             </div>
         </>
     )
