@@ -1,42 +1,36 @@
 import "./App.css";
-
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-// COMPONENTS
+//! COMPONENTS
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 
-// PAGES
-import HomeScreen from "./Pages/HomeScreen";
-import AboutPage from "./Pages/AboutPage";
+//! PAGES
+import HomePage from "./Pages/HomePage";
 import Profile from "./Pages/Profile";
-
-// CONTEXT
-import { GithubProvider } from "./Context/GithubContext";
-import { ThemeProvider } from "./Context/ThemeContext";
-
 import NotFound from "./Pages/NotFound";
 import MyProfile from "./Pages/MyProfile";
+
+//! CONTEXT
+import { ThemeProvider } from "./Context/ThemeContext";
+
+
 function App() {
-  // const API = "https://api.github.com/users/emrekaraa"
 
   return (
     <div className="flex flex-col justify-between h-screen">
       <ThemeProvider>
-        <GithubProvider>
-          <Router>
-            <Header />
-            <Routes>
-              <Route path="/" element={<HomeScreen />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/myprofile" element={<MyProfile />} />
-              <Route path="/404" element={<NotFound />} />
-              <Route path="/:username" element={<Profile />} />
-              <Route path="/*" element={<NotFound />} />
-            </Routes>
-            <Footer />
-          </Router>
-        </GithubProvider>
+        <Router>
+          <Header />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/myprofile" element={<MyProfile />} />
+            <Route path="/404" element={<NotFound />} />
+            <Route path="/:username" element={<Profile />} />
+            <Route path="/*" element={<NotFound />} />
+          </Routes>
+          <Footer />
+        </Router>
       </ThemeProvider>
     </div>
   );

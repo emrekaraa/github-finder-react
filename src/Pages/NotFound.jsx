@@ -1,4 +1,3 @@
-import React from "react";
 import { ImHeartBroken } from "react-icons/im";
 import { Link } from "react-router-dom";
 
