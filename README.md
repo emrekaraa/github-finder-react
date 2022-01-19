@@ -12,6 +12,7 @@
 
     - axios
     - react-router-dom v6
+    - react-paginate
 
 ## Desing
 
